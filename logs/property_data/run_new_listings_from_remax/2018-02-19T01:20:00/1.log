@@ -1,0 +1,45 @@
+[2018-02-21 17:56:31,879] {cli.py:374} INFO - Running on host Sanjeevs-MacBook-Pro.local
+[2018-02-21 17:56:31,895] {models.py:1197} INFO - Dependencies all met for <TaskInstance: property_data.run_new_listings_from_remax 2018-02-19 01:20:00 [queued]>
+[2018-02-21 17:56:31,897] {models.py:1197} INFO - Dependencies all met for <TaskInstance: property_data.run_new_listings_from_remax 2018-02-19 01:20:00 [queued]>
+[2018-02-21 17:56:31,897] {models.py:1407} INFO - 
+--------------------------------------------------------------------------------
+Starting attempt 1 of 2
+--------------------------------------------------------------------------------
+
+[2018-02-21 17:56:31,903] {models.py:1428} INFO - Executing <Task(BashOperator): run_new_listings_from_remax> on 2018-02-19 01:20:00
+[2018-02-21 17:56:31,903] {base_task_runner.py:115} INFO - Running: ['bash', '-c', 'airflow run property_data run_new_listings_from_remax 2018-02-19T01:20:00 --job_id 21 --raw -sd DAGS_FOLDER/property_data.py']
+[2018-02-21 17:56:32,486] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,485] {__init__.py:45} INFO - Using executor SequentialExecutor
+[2018-02-21 17:56:32,571] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,570] {models.py:189} INFO - Filling up the DagBag from /Users/sanjeevsreetharan/Documents/ribbon/airflow/dags/property_data.py
+[2018-02-21 17:56:32,644] {cli.py:374} INFO - Running on host Sanjeevs-MacBook-Pro.local
+[2018-02-21 17:56:32,668] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,667] {bash_operator.py:70} INFO - Tmp dir root location: 
+[2018-02-21 17:56:32,668] {base_task_runner.py:98} INFO - Subtask:  /var/folders/j3/554c399s6t9bxlwbvc0628dw0000gn/T
+[2018-02-21 17:56:32,669] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,669] {bash_operator.py:80} INFO - Temporary script location: /var/folders/j3/554c399s6t9bxlwbvc0628dw0000gn/T/airflowtmp6x1tm5vw//var/folders/j3/554c399s6t9bxlwbvc0628dw0000gn/T/airflowtmp6x1tm5vw/run_new_listings_from_remax_8g9v7o0
+[2018-02-21 17:56:32,670] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,669] {bash_operator.py:88} INFO - Running command: python /jobs/property_data/run_remax_new_listings.py --city charlotte --state nc
+[2018-02-21 17:56:32,675] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,675] {bash_operator.py:97} INFO - Output:
+[2018-02-21 17:56:32,714] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,714] {bash_operator.py:101} INFO - python: can't open file '/jobs/property_data/run_remax_new_listings.py': [Errno 2] No such file or directory
+[2018-02-21 17:56:32,716] {base_task_runner.py:98} INFO - Subtask: [2018-02-21 17:56:32,715] {bash_operator.py:105} INFO - Command exited with return code 2
+[2018-02-21 17:56:32,721] {models.py:1595} ERROR - Bash command failed
+Traceback (most recent call last):
+  File "/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/models.py", line 1493, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/operators/bash_operator.py", line 109, in execute
+    raise AirflowException("Bash command failed")
+airflow.exceptions.AirflowException: Bash command failed
+[2018-02-21 17:56:32,723] {models.py:1616} INFO - Marking task as UP_FOR_RETRY
+[2018-02-21 17:56:32,732] {models.py:1644} ERROR - Bash command failed
+[2018-02-21 17:56:32,732] {base_task_runner.py:98} INFO - Subtask: /Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/utils/helpers.py:351: DeprecationWarning: Importing BashOperator directly from <module 'airflow.operators' from '/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/operators/__init__.py'> has been deprecated. Please import from '<module 'airflow.operators' from '/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/operators/__init__.py'>.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+[2018-02-21 17:56:32,732] {base_task_runner.py:98} INFO - Subtask:   DeprecationWarning)
+[2018-02-21 17:56:32,732] {base_task_runner.py:98} INFO - Subtask: /Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/utils/helpers.py:351: DeprecationWarning: Importing PythonOperator directly from <module 'airflow.operators' from '/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/operators/__init__.py'> has been deprecated. Please import from '<module 'airflow.operators' from '/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/operators/__init__.py'>.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+[2018-02-21 17:56:32,732] {base_task_runner.py:98} INFO - Subtask:   DeprecationWarning)
+[2018-02-21 17:56:32,733] {base_task_runner.py:98} INFO - Subtask: Traceback (most recent call last):
+[2018-02-21 17:56:32,733] {base_task_runner.py:98} INFO - Subtask:   File "/Users/sanjeevsreetharan/anaconda3/bin/airflow", line 27, in <module>
+[2018-02-21 17:56:32,733] {base_task_runner.py:98} INFO - Subtask:     args.func(args)
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:   File "/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/bin/cli.py", line 392, in run
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:     pool=args.pool,
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:   File "/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/utils/db.py", line 50, in wrapper
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:     result = func(*args, **kwargs)
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:   File "/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/models.py", line 1493, in _run_raw_task
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:     result = task_copy.execute(context=context)
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:   File "/Users/sanjeevsreetharan/anaconda3/lib/python3.6/site-packages/airflow/operators/bash_operator.py", line 109, in execute
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask:     raise AirflowException("Bash command failed")
+[2018-02-21 17:56:32,734] {base_task_runner.py:98} INFO - Subtask: airflow.exceptions.AirflowException: Bash command failed
